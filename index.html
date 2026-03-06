@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Endereço por CEP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Busca de Endereço por CEP</h1>
+        
+        <div class="search-box">
+            <label for="cep">Digite o CEP:</label>
+            <div class="input-group">
+                <input type="text" 
+                       id="cep" 
+                       placeholder="00000-000" 
+                       maxlength="9"
+                       pattern="\d{5}-?\d{3}">
+                <button onclick="buscarEndereco()" id="btnBuscar">
+                    Buscar
+                </button>
+            </div>
+            <span class="error-message" id="erro"></span>
+        </div>
+
+        <div class="result-box" id="resultado">
+            <div class="loading" id="loading">Buscando endereço...</div>
+            
+            <div class="address-info" id="enderecoInfo">
+                <div class="info-item">
+                    <label>Logradouro:</label>
+                    <span id="logradouro">---</span>
+                </div>
+                
+                <div class="info-item">
+                    <label>Bairro:</label>
+                    <span id="bairro">---</span>
+                </div>
+                
+                <div class="info-item">
+                    <label>Cidade:</label>
+                    <span id="cidade">---</span>
+                </div>
+                
+                <div class="info-item">
+                    <label>Estado:</label>
+                    <span id="estado">---</span>
+                </div>
+                
+                <div class="info-item">
+                    <label>CEP:</label>
+                    <span id="cepResultado">---</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-box" id="historico">
+            <h2>📋 Últimas buscas</h2>
+            <ul id="listaHistorico"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
